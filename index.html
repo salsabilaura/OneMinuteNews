@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>OMN – One Minute News | Cepat, Singkat, Akurat dan Terpercaya</title>
+  <meta name="description" content="OMN menghadirkan informasi penting dalam waktu singkat, tanpa kehilangan konteks.">
+  <meta name="theme-color" content="#060606">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ikon (sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-watch" viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V9M9.5 2.5h5M12 2.5V6M18.2 7.3l1.4-1.4"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5h3v14H8zM13 5h3v14h-3z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3.2 2-4 .2 1.2.8 2 1.6 2.2C10.3 8 10.5 5.5 12 3z"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15zM10 21h4"/></symbol>
+  <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M7 4h10v17l-5-4-5 4z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></symbol>
+</svg>
+
+<a class="skip" href="#konten">Lewati ke konten</a>
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <span><span id="today">Memuat tanggal…</span><span class="sep" aria-hidden="true"></span><span id="clock"></span></span>
+    <span>Cepat, Singkat, Akurat dan Terpercaya</span>
+  </div>
+</div>
+
+<header class="site-header" id="top">
+  <div class="wrap head-row">
+    <a class="logo" href="#top" aria-label="OMN One Minute News, kembali ke beranda">
+      <svg class="logo-mark" aria-hidden="true"><use href="#i-watch"/></svg>
+      <span class="logo-text"><b>MN</b><small>One Minute News</small></span>
+      <span class="logo-tag">Cepat, Singkat, Akurat dan Terpercaya</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Kategori berita">
+      <ul id="mainNav">
+        <li><a href="#top" class="on" data-spy="top">Beranda</a></li>
+        <li><a href="#terkini" data-spy="terkini">Nasional</a></li>
+        <li><a href="#politik" data-spy="politik">Politik</a></li>
+        <li><a href="#ekonomi" data-spy="ekonomi">Ekonomi</a></li>
+        <li><a href="#bisnis" data-spy="bisnis">Bisnis</a></li>
+        <li><a href="#teknologi" data-spy="teknologi">Teknologi</a></li>
+        <li><a href="#internasional" data-spy="internasional">Internasional</a></li>
+        <li><a href="#lifestyle" data-spy="lifestyle">Lifestyle</a></li>
+      </ul>
+    </nav>
+
+    <div class="head-actions">
+      <button class="icon-btn" id="searchBtn" type="button" aria-label="Cari berita" aria-expanded="false" aria-controls="searchPanel"><svg class="i"><use href="#i-search"/></svg></button>
+      <button class="live" id="liveBtn" type="button">Live<i aria-hidden="true"></i></button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="drawer"><svg class="i"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+
+  <div class="search-panel" id="searchPanel" hidden>
+    <div class="wrap">
+      <label class="search-field">
+        <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+        <span class="sr-only">Cari berita</span>
+        <input id="searchInput" type="search" placeholder="Cari judul atau kategori berita" autocomplete="off">
+        <button type="button" class="icon-btn" id="searchClose" aria-label="Tutup pencarian"><svg class="i"><use href="#i-close"/></svg></button>
+      </label>
+      <ul class="search-results" id="searchResults" aria-live="polite"></ul>
+    </div>
+  </div>
+</header>
+
+<main id="konten">
+  <div class="wrap">
+
+    <section class="top-grid" aria-label="Berita utama">
+      <div class="hero" id="hero" role="region" aria-roledescription="carousel" aria-label="Berita utama"></div>
+
+      <aside class="panel terkini" id="terkini" aria-labelledby="h-terkini">
+        <header class="sec-head">
+          <h2 id="h-terkini"><svg class="i mobile-only" aria-hidden="true"><use href="#i-watch"/></svg><span class="dot desk-only" aria-hidden="true"></span>Terkini</h2>
+          <button class="see-all" type="button" data-search="">Lihat semua <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </header>
+        <ul id="terkiniList"></ul>
+      </aside>
+    </section>
+
+    <section class="panel sixty" id="sixty" aria-labelledby="h-sixty">
+      <header class="sixty-head">
+        <svg class="i sixty-icon" aria-hidden="true"><use href="#i-watch"/></svg>
+        <h2 id="h-sixty">60 Second News</h2>
+        <p>Berita penting dalam 1 menit</p>
+        <button class="see-all" type="button" data-search="">Lihat semua <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </header>
+      <ul class="sixty-list" id="sixtyList"></ul>
+    </section>
+
+    <div class="cat-grid" id="catGrid">
+      <aside class="panel trending" id="trending" aria-labelledby="h-trending">
+        <header class="sec-head">
+          <h2 id="h-trending"><svg class="i" aria-hidden="true"><use href="#i-flame"/></svg>Trending Now</h2>
+          <button class="see-all mobile-only" type="button" data-search="">Lihat semua <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </header>
+        <ol id="trendingList"></ol>
+      </aside>
+    </div>
+
+    <div class="more-grid" id="moreGrid">
+      <aside class="cta" id="cta" aria-label="Notifikasi berita">
+        <div class="cta-logo" aria-hidden="true"><svg class="logo-mark"><use href="#i-watch"/></svg><span class="logo-text"><b>MN</b></span></div>
+        <p>Informasi penting,<br>dalam waktu singkat.</p>
+        <button class="btn gold" id="notifyBtn" type="button"><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg>Aktifkan notifikasi</button>
+      </aside>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <div class="logo static" aria-hidden="true">
+        <svg class="logo-mark"><use href="#i-watch"/></svg>
+        <span class="logo-text"><b>MN</b><small>One Minute News</small></span>
+      </div>
+      <p>Cepat, Singkat, Akurat dan Terpercaya</p>
+    </div>
+    <p class="foot-about">OMN menghadirkan informasi penting dalam waktu yang singkat, tanpa kehilangan konteks. Karena di dunia yang bergerak cepat, setiap detik berarti.</p>
+    <div class="foot-social">
+      <h2>Ikuti kami</h2>
+      <ul>
+        <li><a href="#" aria-label="YouTube">YT</a></li>
+        <li><a href="#" aria-label="TikTok">TT</a></li>
+        <li><a href="#" aria-label="Instagram">IG</a></li>
+        <li><a href="#" aria-label="X">X</a></li>
+        <li><a href="#" aria-label="Facebook">f</a></li>
+      </ul>
+    </div>
+    <form class="subscribe" id="subscribeForm" novalidate>
+      <label for="subEmail">Dapatkan update berita terbaru</label>
+      <div class="sub-row">
+        <input id="subEmail" name="email" type="email" placeholder="Masukkan email Anda" autocomplete="email" required>
+        <button class="btn gold" type="submit">Berlangganan</button>
+      </div>
+      <p class="sub-msg" id="subMsg" role="status"></p>
+    </form>
+  </div>
+  <div class="foot-bar">
+    <div class="wrap foot-bar-in">
+      <span>© <span id="year">2026</span> OMN. Hak cipta dilindungi.</span>
+      <ul>
+        <li><a href="#">Tentang Kami</a></li>
+        <li><a href="#">Pedoman Media Siber</a></li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Navigasi bawah (mobile) -->
+<nav class="bottom-nav" aria-label="Navigasi aplikasi">
+  <button type="button" data-tab="home" class="on"><svg class="i" aria-hidden="true"><use href="#i-home"/></svg>Beranda</button>
+  <button type="button" data-tab="kategori"><svg class="i" aria-hidden="true"><use href="#i-grid"/></svg>Kategori</button>
+  <button type="button" data-tab="video"><svg class="i" aria-hidden="true"><use href="#i-video"/></svg>Video</button>
+  <button type="button" data-tab="saved"><svg class="i" aria-hidden="true"><use href="#i-bookmark"/></svg>Tersimpan</button>
+  <button type="button" data-tab="profil"><svg class="i" aria-hidden="true"><use href="#i-user"/></svg>Profil</button>
+</nav>
+
+<!-- Menu samping -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Semua kategori" inert>
+  <div class="drawer-head">
+    <span>Semua kategori</span>
+    <button type="button" class="icon-btn" id="drawerClose" aria-label="Tutup menu"><svg class="i"><use href="#i-close"/></svg></button>
+  </div>
+  <ul id="drawerList"></ul>
+</aside>
+
+<!-- Dialog berita / pemutar 60 detik / tersimpan -->
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <button class="dlg-x icon-btn" id="dlgClose" type="button" aria-label="Tutup"><svg class="i"><use href="#i-close"/></svg></button>
+  <div id="dlgBody"></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
